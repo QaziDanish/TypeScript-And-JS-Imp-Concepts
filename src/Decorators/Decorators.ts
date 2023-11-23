@@ -1,4 +1,7 @@
-function myDecorator(target: any, key: string, descriptor: any) {
+// Different practical Use Cases of Decorators
+
+/****************For Logging Purpose********************/
+function DecoratorForLogging(target: any, key: string, descriptor: any) {
   const originalMethod = descriptor.value;
   descriptor.value = function (...args: any[]) {
     console.log(
@@ -11,11 +14,11 @@ function myDecorator(target: any, key: string, descriptor: any) {
   return descriptor;
 }
 
-class MyClass {
-  @myDecorator
-  AddMethod(a: number, b: number) {
+class Calculator {
+  @DecoratorForLogging
+  AddTwoNumbers(a: number, b: number) {
     return a + b;
   }
 }
 
-export { myDecorator, MyClass };
+export { Calculator };
