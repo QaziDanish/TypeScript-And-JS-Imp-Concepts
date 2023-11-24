@@ -1,7 +1,11 @@
-import { Calculator } from "./Decorators/Decorators";
+import { Calculator, ExpensiveCalculator } from "./Decorators/Decorators";
 const welcome: String = "Qazi Danish";
 
 console.log(`Welcome ${welcome}`);
 
-const obj: Calculator = new Calculator();
-obj.AddTwoNumbers(1, 33);
+const simpleCalculator: Calculator = new Calculator();
+simpleCalculator.AddTwoNumbers(1, 33);
+
+const expensiveCalculator: ExpensiveCalculator = new ExpensiveCalculator();
+expensiveCalculator.MultiplyNumbers(22, 33);
+expensiveCalculator.MultiplyNumbers(22, 33);
